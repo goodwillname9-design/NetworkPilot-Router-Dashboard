@@ -28,5 +28,8 @@ The helper listens only on loopback, not on the LAN or internet. It does not req
 ## Build
 `npm run build`
 
+## Vercel deployment
+The NetworkPilot dashboard is built from the repository root. In Vercel, set the Root Directory to the repository root (`./`), use `npm run build` as the Build Command, and `dist` as the Output Directory. Dependencies are installed reproducibly with `npm ci` from the root `package-lock.json`; `vercel.json` keeps these build settings aligned.
+
 ## Before adding real router controls
 Identify the router make/model and firmware. Then use only the vendor's documented local API or an established compatible integration. Keep credentials on the local helper, add authentication/CSRF protections, and test read-only access before enabling any blocking or QoS changes.
